@@ -6,11 +6,14 @@
 		<div>
 			<h1>This is a website of my own intellect</h1>
 		</div>
-		<div>
+		{{ posts }}
 			<h2>Definetly</h2>
-		<div>
+		{{ posts }}
 		<p>man this could be really good if I had any idea what I'm doing with Django</p>
 		<p>by jove i think i've got it</p>
+		{% for post in posts %}
+			{{ post }}
+		{% endfor %}
 	</body>
 </html>
 	
