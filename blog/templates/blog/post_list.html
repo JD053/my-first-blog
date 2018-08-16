@@ -6,13 +6,13 @@
 		<div>
 			<h1>This is a website of my own intellect</h1>
 		</div>
-		{{ posts }}
-			<h2>Definetly</h2>
-		{{ posts }}
-		<p>man this could be really good if I had any idea what I'm doing with Django</p>
-		<p>by jove i think i've got it</p>
+		
 		{% for post in posts %}
-			{{ post }}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			<div>
 		{% endfor %}
 	</body>
 </html>
