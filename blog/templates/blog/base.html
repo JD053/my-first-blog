@@ -8,9 +8,20 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-    <div class="page-header">
+    <div id="grad4" class="page-header">
+		{% if  user.is_authenticated %}
+			<a href="{% url 'post_new' %}" class="top-menu">Add Post <span class="glyphicon glyphicon-plus"></span></a>
+		{% endif %}
         <h1><a href="/">First Django Site</a></h1>
     </div>
+	<div class="navi">
+		<ul>
+			<li><a classes="active" href="/">Home</a></li>
+			{% for post in posts %}
+				<li><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
